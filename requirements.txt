@@ -1,0 +1,4 @@
+Flask
+requests
+duckdb
+pandas
