@@ -93,7 +93,8 @@ class NWAC:
                 latest_timestamp = row[0]
                 logger.debug(f"Last timestamp: {latest_timestamp}")
         except Exception as e:
-            logger.error(f"Error getting last timestamp: {str(e).replace('\n',' ')}")
+            e_str = str(e).replace('\n',' ')
+            logger.error(f"Error getting last timestamp: {e_str}")
         # timestamp to utc datetime object
         ts_start = utc_now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=-24*14)
         ts_end = utc_now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=1)

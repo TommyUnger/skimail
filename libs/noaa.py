@@ -102,7 +102,8 @@ class NOAA:
                 latest_timestamp = row[0]
                 logger.debug(f"Last timestamp: {latest_timestamp}")
         except Exception as e:
-            logger.error(f"Error getting last timestamp: {str(e).replace('\n',' ')}")
+            e_str = str(e).replace('\n',' ')
+            logger.error(f"Error getting last timestamp: {e_str}")
 
 
         if not table_exists:
@@ -141,7 +142,8 @@ class NOAA:
                 latest_timestamp = row[0]
                 logger.debug(f"Last timestamp: {latest_timestamp}")
         except Exception as e:
-            logger.error(f"Error getting last timestamp: {str(e).replace('\n',' ')}")
+            e_str = str(e).replace('\n',' ')
+            logger.error(f"Error getting last timestamp: {e_str}")
 
         if not table_exists:
             con.register('noaa_observation_import', df)
